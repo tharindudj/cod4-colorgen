@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Titillium+Web:wght@200&display=swap");
+
 .App {
   text-align: center;
 }
@@ -36,3 +38,15 @@
     transform: rotate(360deg);
   }
 }
+
+
+.btn {
+  margin-left: 10px;
+}
+
+.output {
+  height: 8px;
+}
+
+
+/*# sourceMappingURL=App.css.map */
