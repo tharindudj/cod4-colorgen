@@ -8,16 +8,6 @@ export default class COD4Colorgen extends Component {
 componentDidMount() {
     new ClipboardJS('.btn');
 
-var color = $("#color_input").val();
-
-$("#color_input").change(function () {
-
-    $("#t1").css("color", color);
-    $("#t2").css("color", color);
-})
-
-
-
 $("#gen_btn").click(function () {
     var color = $("#color_input").val();
 
@@ -34,6 +24,9 @@ $("#gen_btn").click(function () {
     $("#in2").val("color = " + colorCode);
     $("#in3").val("glowcolor = " + colorCode);
     $("#in4").val(colorCodeMenu);
+    $("#t1").css("color", color);
+    $("#t2").css("color", color);
+
 })
 
 function hexToRGB(h) {
@@ -65,6 +58,13 @@ function round(num) {
     return Math.round(m) / 100 * Math.sign(num);
 }
 
+
+$("#color_input").change(function () {
+var color = $("#color_input").val();
+
+    $("#t1").css("color", color);
+    $("#t2").css("color", color);
+})
 
 }
 
@@ -153,7 +153,7 @@ render() {
         </div>
         <div className="row">
           <div className="col-md-12 text-center">
-            <p className="text-muted my-4">Copyright © <a href="https://tharindujayakody.me">Frames</a></p>
+            <p className="text-muted my-4">Developed by <a href="https://tharindujayakody.me">Frames</a></p>
           </div>
         </div>
       </div>
