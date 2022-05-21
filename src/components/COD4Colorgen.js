@@ -6,28 +6,22 @@ import $ from "jquery";
 export default class COD4Colorgen extends Component {
 
 componentDidMount() {
-    new ClipboardJS('.btn');
-
-$("#gen_btn").click(function () {
-    var color = $("#color_input").val();
-
-    var r = round(hexToRGB(color)[0] / 255);
-    var g = round(hexToRGB(color)[1] / 255);
-    var b = round(hexToRGB(color)[2] / 255);
-
-    var colorCode = "(" + r + ", " + g + ", " + b + ");";
-    // eslint-disable-next-line no-useless-concat
-    var colorCodeMenu = r + " " + g + " " + b + " " + " 1";
-
-
-    $("#in1").val(colorCode);
-    $("#in2").val("color = " + colorCode);
-    $("#in3").val("glowcolor = " + colorCode);
-    $("#in4").val(colorCodeMenu);
-    $("#t1").css("color", color);
-    $("#t2").css("color", color);
-
-})
+new ClipboardJS('.btn');
+const onClickGen = function () {
+        var color = $("#color_input").val();
+        var r = round(hexToRGB(color)[0] / 255);
+        var g = round(hexToRGB(color)[1] / 255);
+        var b = round(hexToRGB(color)[2] / 255);
+        var colorCode = "(" + r + ", " + g + ", " + b + ");";
+        // eslint-disable-next-line no-useless-concat
+        var colorCodeMenu = r + " " + g + " " + b + " " + " 1";
+        $("#in1").val(colorCode);
+        $("#in2").val("color = " + colorCode);
+        $("#in3").val("glowcolor = " + colorCode);
+        $("#in4").val(colorCodeMenu);
+        $("#t1").css("color", color);
+        $("#t2").css("color", color);
+}
 
 function hexToRGB(h) {
     let r = 0,
@@ -58,16 +52,18 @@ function round(num) {
     return Math.round(m) / 100 * Math.sign(num);
 }
 
+onClickGen();
+$("#gen_btn").on("click", function() {
+    onClickGen();
+});
 
-$("#color_input").change(function () {
+$("#color_input").on("change", function () {
 var color = $("#color_input").val();
 
     $("#t1").css("color", color);
     $("#t2").css("color", color);
-})
-
+});
 }
-
 
 render() {
     return (
@@ -92,20 +88,25 @@ render() {
                 </div>
                 <div className="form-group">
                   <input type="color"
-                        className="outupt form-control"
+                        className="form-control"
                         style={{height: '150px'}}
                         id="color_input"
-                        defaultValue="#0230ff"
+                        defaultValue="#02afff"
                         />
                 </div>
                 <button id="gen_btn"
                         className="btn btn-primary btn-block mb-4"
-                        style={{marginTop: '10px'}}
-                        >Generate</button>
-                <p className="mb-3">For GSC/GSX Scripts</p>
-                <hr />
+                        style={{marginTop: '10px'}}>
+                        Generate
+                </button>
+
+          <div className="mb-3 text-center">
+            <h5 className="text-muted my-4">For GSC/GSX Scripts</h5>
+            < hr />
+
+          </div>
                 <div className="input-group mb-3">
-                  <input type="text" className="outupt form-control" id="in1" aria-describedby="cp1" />
+                  <input type="text" className="ipt form-control" id="in1" aria-describedby="cp1" />
                   <div className="input-group-append">
                     <button className="btn btn-outline-success"
                             data-clipboard-target="#in1"
@@ -115,7 +116,7 @@ render() {
                   </div>
                 </div>
                 <div className="input-group mb-3">
-                  <input type="text" className="outupt form-control" id="in2" aria-describedby="cp2" />
+                  <input type="text" className="ipt form-control" id="in2" aria-describedby="cp2" />
                   <div className="input-group-append">
                     <button className="btn btn-outline-success"
                             data-clipboard-target="#in2"
@@ -125,7 +126,7 @@ render() {
                   </div>
                 </div>
                 <div className="input-group mb-3">
-                  <input type="text" className="outupt form-control" id="in3" aria-describedby="cp3" />
+                  <input type="text" className="ipt form-control" id="in3" aria-describedby="cp3" />
                   <div className="input-group-append">
                     <button className="btn btn-outline-success"
                             data-clipboard-action="copy"
@@ -135,10 +136,13 @@ render() {
                     </button>
                   </div>
                 </div>
-                <p className="mb-3">For Menu Scripts or Config</p>
-                <hr />
+
+          <div className="mb-3 text-center">
+            <h5 className="text-muted my-4">For Menu Scripts or Config</h5>
+            <hr />
+          </div>
                 <div className="input-group mb-3">
-                  <input type="text" className="outupt form-control" id="in4" aria-describedby="cp4" />
+                  <input type="text" className="ipt form-control" id="in4" aria-describedby="cp4" />
                   <div className="input-group-append">
                     <button className="btn btn-outline-success"
                             data-clipboard-target="#in4"
@@ -153,7 +157,7 @@ render() {
         </div>
         <div className="row">
           <div className="col-md-12 text-center">
-            <p className="text-muted my-4">Developed by <a href="https://tharindujayakody.me">Frames</a></p>
+            <h6 className="text-muted my-4">Developed by <a href="https://tharindujayakody.me">Frames</a></h6>
           </div>
         </div>
       </div>
