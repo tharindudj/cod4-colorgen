@@ -16,7 +16,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #0d131e;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -51,7 +51,7 @@
 
 .gen-card {
     background: rgb(0 0 0 / 67%);
-    box-shadow: 0 8px 32px 0 rgb(80 89 120 / 37%);
+    box-shadow: 0 8px 25px 0 rgb(80 89 120 / 37%);
     backdrop-filter: blur( 10px );
     -webkit-backdrop-filter: blur( 8px );
     border-radius: 10px;
