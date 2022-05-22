@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "COD4 ColorGen",
+  "name": "Call of Duty 4 RGB Color Generator",
   "icons": [
     {
       "src": "favicon.ico",

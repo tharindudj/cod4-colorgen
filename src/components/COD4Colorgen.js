@@ -76,7 +76,7 @@ render() {
         </div>
         <div className="row justify-content-center">
           <div className="col-md-6">
-            <div className="card">
+            <div className="gen-card">
               <div className="card-body">
                 <div className="row px-3">
                   <div className="col-6 p-2 mb-4 text-center" style={{backgroundColor: 'black'}}>

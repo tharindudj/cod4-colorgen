@@ -49,5 +49,14 @@
   margin-top: 8px;
 }
 
+.gen-card {
+    background: rgb(0 0 0 / 67%);
+    box-shadow: 0 8px 32px 0 rgb(80 89 120 / 37%);
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 8px );
+    border-radius: 10px;
+    border: 1px solid rgb(0 10 255 / 20%);
+}
+
 
 /*# sourceMappingURL=App.css.map */
