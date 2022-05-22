@@ -79,17 +79,23 @@ render() {
             <div className="gen-card">
               <div className="card-body">
                 <div className="row px-3">
-                  <div className="col-6 p-2 mb-4 text-center" style={{backgroundColor: 'black'}}>
+                  <div className="col-6 p-2 mb-4 text-center" style={{backgroundColor: 'black',
+                                                                      border: '1px solid #ffffff',
+                                                                      borderBottomLeftRadius: 10,
+                                                                      borderTopLeftRadius: 10}}>
                     <h1 id="t1">COLOR</h1>
                   </div>
-                  <div className="col-6 p-2 mb-4 text-center">
+                  <div className="col-6 p-2 mb-4 text-center" style={{backgroundColor: '#ffffff',
+                                                                      border: '1px solid #ffffff',
+                                                                      borderBottomRightRadius: 10,
+                                                                      borderTopRightRadius: 10}}>
                     <h1 id="t2">COLOR</h1>
                   </div>
                 </div>
                 <div className="form-group">
                   <input type="color"
                         className="form-control"
-                        style={{height: '150px'}}
+                        style={{height: '150px', borderRadius: 10, padding: 0.25 + 'rem'}}
                         id="color_input"
                         defaultValue="#02afff"
                         />
